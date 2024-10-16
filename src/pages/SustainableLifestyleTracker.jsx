@@ -110,7 +110,7 @@ const SustainableLifestyleTracker = () => {
             <p className="text-sm">Dedicated to reforestation and promoting renewable energy sources.</p>
           </div>
         </div>
-        <a href="#" className="mt-4 inline-block bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
+        <a href="https://www.nature.org/en-us/" className="mt-4 inline-block bg-blue-500 text-white p-2 rounded hover:bg-blue-600">
           Learn More About These Projects
         </a>
       </div>
