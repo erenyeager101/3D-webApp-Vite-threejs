@@ -33,7 +33,7 @@ const Contact = () => {
           from_name: form.name,
           to_name: "Kunal Sonne",
           from_email: form.email,
-          to_email: "sonnekunal2@gmail.com", // Change to the recipient's email or keep it unknown
+          to_email: "sonnekunal2@gmail.com", 
           message: form.message,
         },
         import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY
@@ -51,8 +51,8 @@ const Contact = () => {
             hideAlert(false);
             setCurrentAnimation("idle");
             setForm({
-              name: "Kunal Sonne", // Reset to your name
-              email: "sonnekunal2@gmail.com", // Reset to your email
+              name: "Kunal Sonne", 
+              email: "sonnekunal2@gmail.com", 
               message: "",
             });
           }, [3000]);
