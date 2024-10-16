@@ -1,9 +1,53 @@
-# Build and Deploy an Amazing 3D Developer Portfolio in React with Three.js
+# Build and Deployed a sustainable web app with carbon footprint calculator on Vite
 
-![3D Website](https://i.ibb.co/ryytGVx/Screenshot-2023-11-25-at-11-28-11-AM.png)
 
-### [🌟 Become a top 1% Next.js 14 developer in only one course](https://jsmastery.pro/next14)
-### [🚀 Land your dream programming job in 6 months](https://jsmastery.pro/masterclass)
-### [📙 Free Three.js Cheatsheet](https://resource.jsmastery.pro/threejs-cheatsheet)
-### [🌐 Best Hosting for Your Websites](https://hostinger.com/javascript10)
 
+# Carbon Footprint Calculator
+
+## Overview
+
+The **Carbon Footprint Calculator** is a web application designed to help users estimate their carbon footprint based on their daily activities. By inputting their travel distance, energy consumption, and waste production, users can calculate their total CO2 emissions and receive suggestions on how to offset their impact on the environment.
+
+## Features
+
+- **Input Parameters**: Users can input data for various parameters, including:
+  - Distance traveled (in miles) using different modes of transportation (car, bus, train, airplane).
+  - Electricity usage (in kWh).
+  - Gas usage (in therms).
+  - Waste production (in pounds).
+
+- **Calculation**: The application calculates the total carbon footprint using predefined carbon emission factors.
+
+- **Offset Suggestions**: After calculation, users receive personalized suggestions on how to reduce their carbon emissions, such as:
+  - Planting trees.
+  - Utilizing public transport.
+  - Switching to renewable energy sources.
+
+## Tech Stack
+
+- **Frontend**: React, JavaScript, Tailwind CSS
+- **Routing**: React Router for navigation
+- **State Management**: React's built-in hooks (useState)
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js and npm installed on your machine.
+- **Clone the repository:**
+   ```bash
+   git clone https://github.com/erenyeager101/IEEE-hackathon-kuna)
+  
+   
+### Install dependencies:
+
+
+npm install
+Start the development server:
+
+
+npm run dev
+Open your browser and navigate to:
+
+
+http://localhost:5173
