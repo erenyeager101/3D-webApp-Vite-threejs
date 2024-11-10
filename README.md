@@ -2,7 +2,7 @@
 
 
 ## Contains
-A 3D website featuring a floating island with cool intercative
+A 3D website featuring a floating island with cool intercative elements to show and route to different sections of this website
 The **Carbon Footprint Calculator** is a web application designed to help users estimate their carbon footprint based on their daily activities. By inputting their travel distance, energy consumption, and waste production, users can calculate their total CO2 emissions and receive suggestions on how to offset their impact on the environment.
 run this project at - https://sustainable-webapp.vercel.app/
 
