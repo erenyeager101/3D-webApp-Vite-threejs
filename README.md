@@ -1,4 +1,4 @@
-# A 3D website Build on vite using threejs
+# A 3D website Build on vite using threejs and deployed on vercel
 
 
 
