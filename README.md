@@ -1,4 +1,4 @@
-# Build and Deployed a 3D website built on vite using threej
+# Build and Deployed a 3D website built on vite using threejs
 
 
 
