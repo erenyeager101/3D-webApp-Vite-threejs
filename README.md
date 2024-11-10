@@ -1,11 +1,8 @@
 # A 3D website Build on vite using threejs and deployed on vercel
 
 
-
-# 3D website
-
 ## Contains
-
+A 3D website featuring a 
 The **Carbon Footprint Calculator** is a web application designed to help users estimate their carbon footprint based on their daily activities. By inputting their travel distance, energy consumption, and waste production, users can calculate their total CO2 emissions and receive suggestions on how to offset their impact on the environment.
 run this project at - https://sustainable-webapp.vercel.app/
 
