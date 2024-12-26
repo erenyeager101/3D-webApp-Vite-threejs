@@ -6,11 +6,11 @@ const HomeInfo = ({ currentStage }) => {
   if (currentStage === 1)
     return (
       <h1 className='sm:text-xl sm:leading-snug text-center neo-brutalism-blue py-4 px-8 text-white mx-5'>
-        Hi, I'm
+        Hi, Welcome to my portfolio!
         <span className='font-semibold mx-2 text-white'>Kunal</span>
         👋
         <br />
-        "GreenSteps: A web app featuring carbon footprint tracking and eco-friendly lifestyle tips." 
+        I am undergraduate student @ VIT,Pune. A tech enthusiast with strong intrest in Machine learning and Web development.
       </h1>
     );
 
@@ -18,11 +18,11 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium sm:text-xl text-center'>
-          Track you carbon footprint <br /> and discover eco-friendly living tips all in one place.
+          Explore my projects <br /> and if you want to contribute then lets connect.
         </p>
 
         <Link to='/about' className='neo-brutalism-white neo-btn'>
-          Learn more
+          See deatiled profile
           <img src={arrow} alt='arrow' className='w-4 h-4 object-contain' />
         </Link>
       </div>
@@ -33,8 +33,9 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
         <p className='font-medium text-center sm:text-xl'>
-        This web application helps users adopt sustainable habits. <br />  and promotes a more environmentally friendly lifestyle.
+        Discover my latest initiative focused on building efficient solutions that empower individuals <br />  to adopt technology-driven lifestyles.
         </p>
+        
 
         <Link to='/projects' className='neo-brutalism-white neo-btn'>
           Visit Now
@@ -48,7 +49,7 @@ const HomeInfo = ({ currentStage }) => {
     return (
       <div className='info-box'>
       <p className='font-medium sm:text-xl text-center'>
-        A web UI/UX based web app <br/> developed during IEEE SB hackathon.
+        Connect Share Learn and Stay motivated!
       </p>
 
       {/* <Link to='/contact' className='neo-brutalism-white neo-btn'>
