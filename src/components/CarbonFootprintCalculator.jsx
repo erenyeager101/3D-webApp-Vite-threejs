@@ -2,47 +2,74 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSpring, animated } from 'react-spring';
 
-const BioContainer = styled.div`
+const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 2rem;
   color: #fff;
-  background: linear-gradient(135deg, #1e90ff, #000080);
-  border-radius: 15px;
-  max-width: 800px;
-  margin: auto;
-  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  min-height: 100vh;
+  box-sizing: border-box;
 `;
 
-const Header = styled.h1`
-  font-size: 2.5rem;
-  color: #fdfdfd;
-  margin-bottom: 1rem;
+const Header = styled(animated.h1)`
+  font-size: 3rem;
+  color: #00d4ff;
   font-weight: bold;
+  margin-bottom: 1rem;
 `;
 
-const SubHeader = styled.h2`
-  font-size: 1.2rem;
-  font-weight: 400;
-  margin-bottom: 1.5rem;
+const SubHeader = styled(animated.h2)`
+  font-size: 1.5rem;
   color: #c9d1d9;
+  margin-bottom: 2rem;
+  text-align: center;
+  max-width: 700px;
 `;
 
-const Section = styled.div`
-  width: 100%;
-  margin-bottom: 1.5rem;
-  padding: 1rem;
+const FloatingCardsContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+`;
+
+const Card = styled(animated.div)`
+  background: linear-gradient(135deg, #16213e, #1a1a2e);
+  color: #fff;
+  border: 2px solid #00d4ff;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.1);
+  }
+`;
+
+const Section = styled(animated.div)`
+  max-width: 800px;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 10px;
-  text-align: left;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
   box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
 `;
 
 const SectionTitle = styled.h3`
-  font-size: 1.5rem;
-  color: #00ffff;
-  margin-bottom: 0.5rem;
+  font-size: 1.8rem;
+  color: #00d4ff;
+  margin-bottom: 1rem;
 `;
 
 const Link = styled.a`
@@ -55,77 +82,87 @@ const Link = styled.a`
   }
 `;
 
-const Bio = () => {
+const About = () => {
   const fadeIn = useSpring({
-    from: { opacity: 0, transform: 'translateY(20px)' },
-    to: { opacity: 1, transform: 'translateY(0)' },
-    config: { duration: 800 },
-  });
-
-  const slideUp = useSpring({
-    from: { opacity: 0, transform: 'translateY(40px)' },
-    to: { opacity: 1, transform: 'translateY(0)' },
+    from: { opacity: 0 },
+    to: { opacity: 1 },
     config: { duration: 1000 },
   });
 
+  const slideUp = useSpring({
+    from: { transform: 'translateY(50px)', opacity: 0 },
+    to: { transform: 'translateY(0)', opacity: 1 },
+    config: { duration: 800 },
+  });
+
+  const cardsAnimation = useSpring({
+    from: { transform: 'scale(0.8)', opacity: 0 },
+    to: { transform: 'scale(1)', opacity: 1 },
+    config: { duration: 500 },
+  });
+
   return (
-    <BioContainer>
-      <animated.div style={fadeIn}>
-        <Header>Hi, I'm Kunal Sonne!</Header>
-        <SubHeader>
-          Tech enthusiast | B.Tech @ VIT Pune | Passionate about coding, ML, IoT & Web Development
-        </SubHeader>
-      </animated.div>
+    <PageContainer>
+      <Header style={fadeIn}>Hi, I'm Kunal Sonne!</Header>
+      <SubHeader style={fadeIn}>
+        Tech enthusiast | B.Tech @ VIT Pune | Passionate about coding, ML, IoT, & Web Development
+      </SubHeader>
 
-      <animated.div style={slideUp}>
-        <Section>
-          <SectionTitle>About Me</SectionTitle>
-          <p>
-            I'm a tech enthusiast with a focus on programming, Machine Learning, Web Development, and IoT. My projects range from heart disease detection using ML algorithms to real-time crowd monitoring systems.
-            When I'm not coding, I enjoy anime, movies, and writing about the latest in tech trends.
-          </p>
-        </Section>
+      <FloatingCardsContainer>
+        <Card style={cardsAnimation} onClick={() => window.open('https://github.com/erenyeager101', '_blank')}>
+          GitHub
+        </Card>
+        <Card style={cardsAnimation} onClick={() => window.open('https://www.linkedin.com/in/kunal-sonne-719748322/', '_blank')}>
+          LinkedIn
+        </Card>
+        <Card style={cardsAnimation} onClick={() => window.open('mailto:sonnekunal2@gmail.com', '_blank')}>
+          Connect
+        </Card>
+      </FloatingCardsContainer>
 
-        <Section>
-          <SectionTitle>Projects</SectionTitle>
-          <p>
-            <strong>Heart Disease Detection:</strong> Machine learning-based project with 88% accuracy using Random Forest, aiming for higher accuracy with a GANFIS hybrid model.{' '}
-            <Link href="https://github.com/erenyeager101/Heart_Disease_Detection" target="_blank">GitHub Repository</Link>
-          </p>
-          <p>
-            <strong>Wellness LinkHub:</strong> A hospital management portal for better patient care.{' '}
-            <Link href="https://github.com/erenyeager101/Wellness_LinkHub" target="_blank">GitHub Repository</Link>
-          </p>
-          <p>
-            <strong>Crowd Monitoring System:</strong> Real-time crowd tracking app with color-coded maps, peak & average data.{' '}
-            <Link href="https://github.com/erenyeager101/Crowd_monitoring" target="_blank">GitHub Repository</Link>
-          </p>
-          <p>
-            <strong>Pizza Buying dApp:</strong> A decentralized app for buying pizza with cryptocurrency. Built with Solidity, Node.js, and React.{' '}
-            <Link href="#" target="_blank">GitHub Repository</Link>
-          </p>
-        </Section>
+      <Section style={slideUp}>
+        <SectionTitle>About Me</SectionTitle>
+        <p>
+          I'm a tech enthusiast specializing in programming, Machine Learning, IoT, and Web Development. My experience spans various projects, 
+          from heart disease detection systems to real-time crowd monitoring solutions. I thrive on solving challenges through technology and constantly 
+          learning to push the boundaries of what's possible.
+        </p>
+      </Section>
 
-        <Section>
-          <SectionTitle>Blog</SectionTitle>
-          <p>
-            I write about the latest trends in web development frameworks like SvelteKit, GraphQL, and Apollo.{' '}
-            <Link href="#">Check Out My Blog</Link>
-          </p>
-        </Section>
+      <Section style={slideUp}>
+        <SectionTitle>Projects</SectionTitle>
+        <p>
+          <strong>Heart Disease Detection:</strong> ML project achieving 88% accuracy with Random Forest.{' '}
+          <Link href="https://github.com/erenyeager101/Heart_Disease_Detection" target="_blank">GitHub Repository</Link>
+        </p>
+        <p>
+          <strong>Wellness LinkHub:</strong> A hospital management system.{' '}
+          <Link href="https://github.com/erenyeager101/Wellness_LinkHub" target="_blank">GitHub Repository</Link>
+        </p>
+        <p>
+          <strong>Crowd Monitoring System:</strong> Real-time tracking with intelligent insights.{' '}
+          <Link href="https://github.com/erenyeager101/Crowd_monitoring" target="_blank">GitHub Repository</Link>
+        </p>
+        <p>
+          <strong>Pizza Buying dApp:</strong> Decentralized app for pizza orders.{' '}
+          <Link href="#" target="_blank">GitHub Repository</Link>
+        </p>
+      </Section>
 
-        <Section>
-          <SectionTitle>Get In Touch</SectionTitle>
-          <p>Email: <Link href="mailto:sonnekunal2@gmail.com">sonnekunal2@gmail.com</Link></p>
-          <p>GitHub: <Link href="https://github.com/erenyeager101" target="_blank">Kunal Sonne</Link></p>
-          <p>LinkedIn: <Link href="#" target="_blank">Kunal Sonne</Link></p>
-          <p>Let's connect if you're interested in collaborations or just want to chat about tech!</p>
-        </Section>
-      </animated.div>
-    </BioContainer>
+      <Section style={slideUp}>
+        <SectionTitle>Get In Touch</SectionTitle>
+        <p>
+          Email: <Link href="mailto:sonnekunal2@gmail.com">sonnekunal2@gmail.com</Link>
+        </p>
+        <p>
+          GitHub: <Link href="https://github.com/erenyeager101" target="_blank">erenyeager101</Link>
+        </p>
+        <p>
+          LinkedIn: <Link href="https://www.linkedin.com/in/kunal-sonne-719748322/" target="_blank">Kunal Sonne</Link>
+        </p>
+      </Section>
+    </PageContainer>
   );
 };
 
-
-
-export default CarbonFootprintCalculator;
+export default About;
